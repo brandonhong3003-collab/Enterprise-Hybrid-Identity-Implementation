@@ -13,7 +13,7 @@ A fully functional, enterprise-grade Hybrid Identity and Endpoint Management lab
                                        |  (Entra Connect Sync / PHS)
                                        v
 +------------------------------------------+------------------------------------------+
-|  Internal Hypervisor Network (192.168.1.0/24)                                        |
+|  Internal Hypervisor Network (192.168.1.0/24)                                       |
 |                                                                                     |
 |   +------------------------------------+          +-----------------------------+   |
 |   | DC01 (Windows Server 2022)         |          | CLIENT11 (Windows 11 Pro)   |   |
