@@ -5,13 +5,13 @@ A fully functional, enterprise-grade Hybrid Identity and Endpoint Management lab
 ---
 
 ## 📐 Network & Architecture Topology
-              +--------------------------------------------------+
-              |         Microsoft Entra ID / Intune Tenant       |
-              |            (labopssyd.onmicrosoft.com)           |
-              +------------------------+-------------------------+
-                                       ^
-                                       |  (Entra Connect Sync / PHS)
-                                       v
+                        +--------------------------------------------------+
+                        |         Microsoft Entra ID / Intune Tenant       |
+                        |            (labopssyd.onmicrosoft.com)           |
+                        +------------------------+-------------------------+
+                                                 ^
+                                                 |  (Entra Connect Sync / PHS)
+                                                 v
       +------------------------------------------+------------------------------------------+
       |  Internal Hypervisor Network (192.168.1.0/24)                                       |
       |                                                                                     |
