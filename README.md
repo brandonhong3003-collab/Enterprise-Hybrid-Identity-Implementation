@@ -58,10 +58,16 @@ A fully functional, enterprise-grade Hybrid Identity and Endpoint Management lab
 * **Root Cause:** Tenant MDM discovery endpoints were unmapped in Entra ID Mobility settings during initial setup.
 * **Resolution:** Hardcoded the direct Intune discovery endpoint (`https://enrollment.manage.microsoft.com/enrollmentserver/discovery.svc`) in Windows Access Work or School settings, successfully acquiring PRT SSO and establishing Intune Compliance.
 
-#### 5. Risk-Based Conditional Access Policy (Entra ID P2)
+### 5. Risk-Based Conditional Access Policy (Entra ID P2)
 * **Issue/Requirement:** Basic authentication allows access from unmanaged or compromised contexts without dynamic risk evaluation.
 * **Root Cause:** Default security configurations enforce generic MFA prompts but lack granular sign-in risk evaluation and device compliance enforcement.
 * **Resolution:** Disabled Security Defaults and deployed policy `CA001: Risk-Based Sign-in Control (Medium/High Risk)`, forcing MFA or Intune Device Compliance whenever medium or high sign-in risk is detected.
+### 6. Privileged Identity Management (PIM) & Zero Standing Access
+* **Issue/Requirement:** Permanent administrative rights (standing privileges) increase vulnerability to credential theft and lateral movement.
+* **Root Cause:** Standard role assignments grant 24/7 administrative access regardless of whether active maintenance is being performed.
+* **Resolution:** Reconfigured administrative roles to **Eligible** assignments in Entra PIM. Enforced Just-In-Time (JIT) role elevation requiring explicit business justification, step-up MFA, and automated time-bound session revocation.
+
+
 
 
 ---
@@ -75,3 +81,4 @@ A fully functional, enterprise-grade Hybrid Identity and Endpoint Management lab
 * [Account Integration View](docs/screenshots/Hybrid-Join-dsregcmd-account.png)
 * [Microsoft Intune Compliance Status](docs/screenshots/Intune-Compliance-Success.png)
 * [Risk-Based Conditional Access Policy](docs/screenshots/CA001-Risk-Policy.png)
+* ![PIM Active Assignment Proof](docs/screenshots/PIM-Active-Assignment.png)
