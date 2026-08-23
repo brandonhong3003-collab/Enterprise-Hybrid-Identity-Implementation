@@ -48,6 +48,15 @@ A fully functional, enterprise-grade Hybrid Identity and Endpoint Management lab
 * **Root Cause:** IME defaults to a 32-bit PowerShell host, triggering Windows Registry Redirection[cite: 1].
 * **Resolution:** Enforced **"Run script in 64-bit PowerShell Host = Yes"** in Intune[cite: 1].
 
+### 3. Time Skew & OAuth Token Renewal Failure
+* **Issue:** `CLIENT11` failed automatic MDM enrollment with `Access is denied (0x80070005)` and Event ID 76 (`Current time is earlier than expected renew attempt time`).
+* **Root Cause:** `DC01` system clock drifted into the future, causing Entra ID to issue future-dated OAuth tokens (May 2027) that `CLIENT11` rejected during local validation.
+* **Resolution:** Configured `DC01` time hierarchy via `w32tm /config /syncfromflags:manual`, resynced `CLIENT11` clock, and purged stale enrollment GUIDs under `HKLM\SOFTWARE\Microsoft\Enrollments`.
+
+### 4. MDM Auto-Discovery Endpoint Bypass
+* **Issue:** User-context enrollment thrown from `deviceenroller.exe` failed due to missing CNAME DNS auto-discovery for `labopssyd.onmicrosoft.com`.
+* **Root Cause:** Tenant MDM discovery endpoints were unmapped in Entra ID Mobility settings during initial setup.
+* **Resolution:** Hardcoded the direct Intune discovery endpoint (`https://enrollment.manage.microsoft.com/enrollmentserver/discovery.svc`) in Windows Access Work or School settings, successfully acquiring PRT SSO and establishing Intune Compliance.
 ---
 
 ## 📂 Project Documentation
