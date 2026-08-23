@@ -57,6 +57,13 @@ A fully functional, enterprise-grade Hybrid Identity and Endpoint Management lab
 * **Issue:** User-context enrollment thrown from `deviceenroller.exe` failed due to missing CNAME DNS auto-discovery for `labopssyd.onmicrosoft.com`.
 * **Root Cause:** Tenant MDM discovery endpoints were unmapped in Entra ID Mobility settings during initial setup.
 * **Resolution:** Hardcoded the direct Intune discovery endpoint (`https://enrollment.manage.microsoft.com/enrollmentserver/discovery.svc`) in Windows Access Work or School settings, successfully acquiring PRT SSO and establishing Intune Compliance.
+
+#### 5. Risk-Based Conditional Access Policy (Entra ID P2)
+* **Issue/Requirement:** Basic authentication allows access from unmanaged or compromised contexts without dynamic risk evaluation.
+* **Root Cause:** Default security configurations enforce generic MFA prompts but lack granular sign-in risk evaluation and device compliance enforcement.
+* **Resolution:** Disabled Security Defaults and deployed policy `CA001: Risk-Based Sign-in Control (Medium/High Risk)`, forcing MFA or Intune Device Compliance whenever medium or high sign-in risk is detected.
+
+
 ---
 
 ## 📂 Project Documentation
@@ -67,4 +74,4 @@ A fully functional, enterprise-grade Hybrid Identity and Endpoint Management lab
 * [Hybrid Identity Verification](docs/screenshots/Hybrid-Join-dsregcmd.png)
 * [Account Integration View](docs/screenshots/Hybrid-Join-dsregcmd-account.png)
 * [Microsoft Intune Compliance Status](docs/screenshots/Intune-Compliance-Success.png)
-
+* [Risk-Based Conditional Access Policy](docs/screenshots/CA001-Risk-Policy.png)
