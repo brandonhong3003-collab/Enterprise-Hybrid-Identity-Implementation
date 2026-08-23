@@ -52,6 +52,6 @@ A fully functional, enterprise-grade Hybrid Identity and Endpoint Management lab
 
 ## 📂 Project Documentation
 
-* [Full Engineering Execution Log (Week 1 – Week 4)](docs/Complete-Lab-Documentation.md)[cite: 1]
-* [PowerShell Scripts & Remediations](scripts/)[cite: 1]
+* [Full Engineering Execution Log (Week 1 – Week 4)](docs/Complete-Lab-Documentation.md)
+* [PowerShell Scripts & Remediations](scripts/)
 * [Microsoft Intune Compliance Status](docs/screenshots/Intune-Compliance-Success.png)
