@@ -81,4 +81,4 @@ A fully functional, enterprise-grade Hybrid Identity and Endpoint Management lab
 * [Account Integration View](docs/screenshots/Hybrid-Join-dsregcmd-account.png)
 * [Microsoft Intune Compliance Status](docs/screenshots/Intune-Compliance-Success.png)
 * [Risk-Based Conditional Access Policy](docs/screenshots/CA001-Risk-Policy.png)
-* ![PIM Active Assignment Proof](docs/screenshots/PIM-Active-Assignment.png)
+* [PIM Active Assignment Proof](docs/screenshots/PIM-Active-Assignment.png)
