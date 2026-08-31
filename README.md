@@ -71,7 +71,7 @@ A fully functional, enterprise-grade Hybrid Identity and Endpoint Management lab
 * **Root Cause:** Default MDM enrollment checks device registry status but does not evaluate active Firewall state, Antivirus health, or OS version thresholds.
 * **Resolution:** Authored and deployed `WIN11-Compliance-Baseline` via Microsoft Intune, enforcing BitLocker encryption, Microsoft Defender status, and a minimum OS build of 10.0.22631 across targeted endpoints.
 
-![Intune Compliance Policy Baseline](docs/screenshots/Intune-Compliance-Policy-Baseline.png)
+
 
 
 
@@ -88,3 +88,4 @@ A fully functional, enterprise-grade Hybrid Identity and Endpoint Management lab
 * [Microsoft Intune Compliance Status](docs/screenshots/Intune-Compliance-Success.png)
 * [Risk-Based Conditional Access Policy](docs/screenshots/CA001-Risk-Policy.png)
 * [PIM Active Assignment Proof](docs/screenshots/PIM-Active-Assignment.png)
+* [Intune Compliance Policy Baseline](docs/screenshots/Intune-Compliance-Policy-Baseline.png)
