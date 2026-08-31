@@ -66,6 +66,12 @@ A fully functional, enterprise-grade Hybrid Identity and Endpoint Management lab
 * **Issue/Requirement:** Permanent administrative rights (standing privileges) increase vulnerability to credential theft and lateral movement.
 * **Root Cause:** Standard role assignments grant 24/7 administrative access regardless of whether active maintenance is being performed.
 * **Resolution:** Reconfigured administrative roles to **Eligible** assignments in Entra PIM. Enforced Just-In-Time (JIT) role elevation requiring explicit business justification, step-up MFA, and automated time-bound session revocation.
+#### 7. Custom Intune Compliance Baseline Deployment
+* **Issue/Requirement:** Unpatched or unencrypted endpoints pose a risk when connecting to corporate applications without health validation.
+* **Root Cause:** Default MDM enrollment checks device registry status but does not evaluate active Firewall state, Antivirus health, or OS version thresholds.
+* **Resolution:** Authored and deployed `WIN11-Compliance-Baseline` via Microsoft Intune, enforcing BitLocker encryption, Microsoft Defender status, and a minimum OS build of 10.0.22631 across targeted endpoints.
+
+![Intune Compliance Policy Baseline](docs/screenshots/Intune-Compliance-Policy-Baseline.png)
 
 
 
