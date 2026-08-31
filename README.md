@@ -83,16 +83,6 @@ A fully functional, enterprise-grade Hybrid Identity and Endpoint Management lab
 * **Root Cause:** Policy settings in Intune can remain in a pending state until an MDM check-in cycle occurs or client-side sync is executed.
 * **Resolution:** Performed manual and remote MDM policy synchronization on `CLIENT11-VM`. Confirmed active engine telemetry as Intune dynamically audited the endpoint, marking BitLocker non-compliant as expected due to lab VM encryption baselines.
 
-
-
-
-
-
-
-
-
-
-
 ---
 
 ## 📂 Project Documentation
