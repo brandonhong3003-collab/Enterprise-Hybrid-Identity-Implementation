@@ -70,6 +70,23 @@ A fully functional, enterprise-grade Hybrid Identity and Endpoint Management lab
 * **Issue/Requirement:** Unpatched or unencrypted endpoints pose a risk when connecting to corporate applications without health validation.
 * **Root Cause:** Default MDM enrollment checks device registry status but does not evaluate active Firewall state, Antivirus health, or OS version thresholds.
 * **Resolution:** Authored and deployed `WIN11-Compliance-Baseline` via Microsoft Intune, enforcing BitLocker encryption, Microsoft Defender status, and a minimum OS build of 10.0.22631 across targeted endpoints.
+#### 8. Endpoint Security & Defender Antivirus Baseline
+* **Issue/Requirement:** Unmanaged antivirus settings on endpoints can leave devices vulnerable to zero-day threats if end users disable local protection.
+* **Root Cause:** Standard Windows Defender installations allow local user overrides if not governed by central MDM policy controls.
+* **Resolution:** Configured and deployed `WIN11-Defender-ASR-Baseline` via Intune Endpoint Security, enforcing Real-Time Behavior Monitoring, Cloud Protection, and Intrusion Prevention across managed workloads.
+#### 9. Automated App Delivery via Microsoft Intune
+* **Issue/Requirement:** Manual software installation on newly onboarded devices increases IT overhead and leads to inconsistent software baselines.
+* **Root Cause:** Endpoints lack automated software provisioning post-domain join without central MDM app management.
+* **Resolution:** Configured enterprise application deployment via Microsoft Intune (Microsoft Store integration), assigning the Company Portal infrastructure app with a Required install intent across managed devices.
+#### 10. End-to-End Policy Sync & Compliance Verification
+* **Issue/Requirement:** Validate that cloud-configured identity, compliance, security, and app policies propagate and execute on local endpoints.
+* **Root Cause:** Policy settings in Intune can remain in a pending state until an MDM check-in cycle occurs or client-side sync is executed.
+* **Resolution:** Performed manual and remote MDM policy synchronization on `CLIENT11-VM`. Confirmed active engine telemetry as Intune dynamically audited the endpoint, marking BitLocker non-compliant as expected due to lab VM encryption baselines.
+
+
+
+
+
 
 
 
@@ -89,3 +106,6 @@ A fully functional, enterprise-grade Hybrid Identity and Endpoint Management lab
 * [Risk-Based Conditional Access Policy](docs/screenshots/CA001-Risk-Policy.png)
 * [PIM Active Assignment Proof](docs/screenshots/PIM-Active-Assignment.png)
 * [Intune Compliance Policy Baseline](docs/screenshots/Intune-Compliance-Policy-Baseline.png)
+* [Intune Defender Security Policy](docs/screenshots/Intune-Defender-Security-Policy.png)
+* [Intune App Deployment Baseline](docs/screenshots/Intune-App-Deployment.png)
+* [Intune Policy Sync Verification](docs/screenshots/Intune-End-to-End-Policy-Sync.png)
